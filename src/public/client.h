@@ -2,18 +2,18 @@
 
 #include <cstdint>
 
-#include "interface.h"
+#include "appsystem.h"
 
 namespace hlapi {
-class CSource2Client {
+
+#define INTERFACE_VERSION_GAME_CLIENTS "Source2GameClients001"
+#define INTERFACE_VERSION_GAME_ENTITIES "Source2GameEntities001"
+#define INTERFACE_VERSION_GAME_EVENT_SYSTEM_CLIENT "GameEventSystemClientV001"
+
+class CSource2Client : public IAppSystem {
 public:
     CSource2Client();
 
-    virtual bool Init(void* unk0, CreateInterfaceFn appSystemFactory); // unk0 only used for vscript iface
-    virtual void Disconnect(void* unk0);
-    virtual void unk0();
-    virtual void unk1(void* unk0);
-    virtual void Shutdown(void* unk0);
     virtual void unk2();
     virtual void* unk3();
     virtual uint64_t unk4(); // ret 5
@@ -29,7 +29,7 @@ public:
     virtual int unk14(uint64_t unk0, int32_t unk1);
     virtual void unk15(uint64_t unk0, int32_t unk1);
     virtual void unk16(int32_t unk0, uint64_t unk1, int32_t unk2, uint8_t unk3);
-    virtual void WriteUsercmdDeltaToBuffer(void* unk0, int32_t unk1, int64_t unk2, int32_t unk3, int32_t unk4);
+    virtual void WriteUsercmdDeltaToBuffer(void* unk0, int32_t unk1, int64_t unk2, int32_t unk3, int32_t unk4); // "CL:  WARNING! User command buffer overflow (%i->%i), last cmd was %i bits long\n"
     virtual void unk17(uint64_t unk0, int32_t unk1, uint64_t unk2, int32_t unk3);
     virtual void unk18(uint64_t unk0, int32_t unk1, uint64_t unk2, int32_t unk3);
     virtual uint64_t unk19(uint64_t unk0, uint32_t unk1, void* unk2);

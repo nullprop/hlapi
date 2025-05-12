@@ -1,4 +1,5 @@
 #include "public/interface.h"
+#include "public/platform.h"
 
 namespace hlapi
 {

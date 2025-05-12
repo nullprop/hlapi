@@ -15,6 +15,7 @@ namespace hlapi
 #define MODULE_ENGINE "engine2"
 #define MODULE_CLIENT "client"
 #define MODULE_SERVER "server"
+#define MODULE_HOST "host"
 
 #define GetFuncAddress(pAddress, szFunction) ::GetProcAddress((HMODULE)pAddress, szFunction)
 #define GetHandleOfModule(szModuleName) GetModuleHandleA(szModuleName)
@@ -24,6 +25,7 @@ namespace hlapi
 #define MODULE_ENGINE "bin/linuxsteamrt64/libengine2.so"
 #define MODULE_CLIENT "hlvr/bin/linuxsteamrt64/libclient.so"
 #define MODULE_SERVER "hlvr/bin/linuxsteamrt64/libserver.so"
+#define MODULE_HOST "hlvr/bin/linuxsteamrt64/libhost.so"
 
 #define GetFuncAddress(pAddress, szFunction) dlsym(pAddress, szFunction)
 #define GetHandleOfModule(szModuleName) dlopen(szModuleName, RTLD_LAZY | RTLD_NOLOAD)
